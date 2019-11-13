@@ -1,0 +1,52 @@
+footer {
+    text-align: center;
+    color: $text-muted;
+    background-color: $white;
+    padding: 60px 0;
+
+    .logo {
+        display: inline-block;
+        margin-bottom: 30px;
+
+        img {
+            width: 138px;
+
+            @include media-breakpoint-up(lg) {
+                width: 163px;
+            }
+        }
+    }
+
+    .list-inline {
+        margin-bottom: 30px;
+
+        &-item {
+            a {
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                border-radius: 3px;
+
+                &.facebook {
+                    background-color: #3b5999;
+                }
+
+                &.twitter {
+                    background-color: #55acee;
+                }
+
+                &.instagram {
+                    background-color: #e4405f;
+                }
+
+                &.youtube {
+                    background-color: #cd201f;
+                }
+            }
+        }
+    }
+}
