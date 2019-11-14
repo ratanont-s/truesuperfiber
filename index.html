@@ -17,7 +17,7 @@
                 <a href="./index.html" class="logo">
                     <img src="./assets/images/True_logo.png" alt="True Super Fiber">
                 </a>
-                <form action="" class="card shadow">
+                <form action="" class="card shadow needs-validation" novalidate>
                     <div class="row no-gutters">
                         <div class="col-lg">
                             <img src="./assets/images/Truefiber-Upspeed_OCT.png" alt="">
@@ -31,42 +31,67 @@
                                     เเพ็กเสริมเพิ่มสปีด</h5>
                                 <div class="row">
                                     <div class="col-lg-6 form-group">
-                                        <input type="text" class="form-control" placeholder="ชื่อ">
+                                        <input type="text" class="form-control" placeholder="ชื่อ" required>
+                                        <div class="invalid-feedback">
+                                            กรุณากรอกข้อมูลให้ถูกต้อง
+                                        </div>
                                     </div>
                                     <div class="col-lg-6 form-group">
-                                        <input type="text" class="form-control" placeholder="นามสกุล">
+                                        <input type="text" class="form-control" placeholder="นามสกุล" required>
+                                        <div class="invalid-feedback">
+                                            กรุณากรอกข้อมูลให้ถูกต้อง
+                                        </div>
                                     </div>
                                     <div class="col-lg-6 form-group">
-                                        <input type="text" class="form-control" placeholder="อีเมล">
+                                        <input type="text" class="form-control" placeholder="อีเมล" required>
+                                        <div class="invalid-feedback">
+                                            กรุณากรอกข้อมูลให้ถูกต้อง
+                                        </div>
                                     </div>
                                     <div class="col-lg-6 form-group">
-                                        <input type="text" class="form-control" placeholder="เลขบัตรประชาชน">
+                                        <input type="text" class="form-control" placeholder="เลขบัตรประชาชน" required>
+                                        <div class="invalid-feedback">
+                                            กรุณากรอกข้อมูลให้ถูกต้อง
+                                        </div>
                                     </div>
                                     <div class="col-lg-6 form-group">
-                                        <input type="text" class="form-control" placeholder="เบอร์โทรศัพท์มือถือ">
+                                        <input type="text" class="form-control" placeholder="เบอร์โทรศัพท์มือถือ"
+                                            required>
+                                        <div class="invalid-feedback">
+                                            กรุณากรอกข้อมูลให้ถูกต้อง
+                                        </div>
                                         <small>(สำหรับรับ SMS ยืนยันการสมัคร)</small>
                                     </div>
                                     <div class="col-lg-6 form-group">
-                                        <input type="text" class="form-control" value="96">
+                                        <input type="text" class="form-control" placeholder="96" required>
+                                        <div class="invalid-feedback">
+                                            กรุณากรอกข้อมูลให้ถูกต้อง
+                                        </div>
                                         <small>หมายเลขที่ใช้บริการอินเทอร์เน็ต เช่น 96xxxxxxxx</small>
                                     </div>
                                     <div class="col-lg-12 form-group">
-                                        <select class="form-control">
-                                            <option selected>เลือกแพ็คเจ</option>
+                                        <select class="form-control" required>
+                                            <option value="">เลือกแพ็คเจ</option>
                                         </select>
+                                        <div class="invalid-feedback">
+                                            กรุณากรอกข้อมูลให้ถูกต้อง
+                                        </div>
                                     </div>
                                     <div class="col-lg-12 custom-control custom-checkbox mb-5">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1" required>
                                         <label class="custom-control-label" for="customCheck1" data-toggle="modal"
                                             data-target="#myModal">คลิ๊กเพื่ออ่าน
                                             ข้อกำหนดเเละเงื่อนไขการสมัคร.</label>
+                                            <div class="invalid-feedback text-center">
+                                                กรุณาอ่านข้อกำหนดเงื่อนไขก่อนทำการสมัคร
+                                            </div>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-submit mb-3">สมัครแพ็คเกจ</button>
                                 <div class="small mb-lg-3">**ข้อมูลใช้สำหรับการสมัครบริการ True Super Fiber Speed Boost
                                     แพ็กเสริมเพิ่มสปีด
                                     เท่านั้น**</div>
-                                <button type="submit"
+                                <button type="button"
                                     class="btn btn-chat d-none d-lg-inline-block">แชทคุยกับเจ้าหน้าที่</button>
                             </div>
                         </div>
@@ -230,6 +255,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/990479688a.js" crossorigin="anonymous"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
 </body>
 
 </html>
